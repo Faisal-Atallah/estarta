@@ -22,6 +22,10 @@ export class ListService {
     return this._list.asObservable();
   }
 
+  /**
+   * Get List
+   * @returns {Observable<List[]>}
+   */
   getList(): Observable<List[]> {
     return this._httpClient.get<List[]>(environment.serverOrigin).pipe(
       tap((response: List[]) => {

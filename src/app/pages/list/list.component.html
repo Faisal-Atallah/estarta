@@ -22,7 +22,7 @@
                 <div class="mt-4 divide-y   divide-gray-200 border-b border-t border-l border-r  border-gray-200"
                   cdkDropList (cdkDropListDropped)="drop($event)">
                   <ng-container *ngFor="let item of list; trackBy: trackByFn">
-                    <div class="relative flex items-start py-4 px-2" cdkDrag [cdkDragData]="item">
+                    <div class="relative flex items-start py-4 px-2 cursor-all-scroll	" cdkDrag [cdkDragData]="item">
                       <div class="min-w-0 flex-1 text-sm leading-6">
                         <label [for]="item.id" class="select-none font-medium text-gray-900">{{item?.name}}</label>
                       </div>
@@ -32,7 +32,7 @@
                           [checked]="item.checked"
                           class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
                       </div>
-
+                      <div class="drag-placeholder" *cdkDragPlaceholder></div>
                       <div class="ml-3 flex h-6 items-center">
                         <mat-icon>drag_handle</mat-icon>
                       </div>

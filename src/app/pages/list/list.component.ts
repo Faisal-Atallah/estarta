@@ -9,7 +9,7 @@ import {
 import { Subject, takeUntil } from 'rxjs';
 import { trackByFn, unsubscribe } from 'src/app/core/utils';
 import { ListService } from './list.service';
-import { ListItem, List } from './list.types';
+import { ListItem } from './list.types';
 
 @Component({
   selector: 'app-list',
@@ -107,6 +107,9 @@ export class ListComponent implements OnInit, OnDestroy {
   drop(event: CdkDragDrop<string[]>): void {
     moveItemInArray(this.list, event.previousIndex, event.currentIndex);
     this._addItemToEditedList(event.item.data);
+
+    // Mark for check
+    this._changeDetectorRef.markForCheck();
   }
 
   /**

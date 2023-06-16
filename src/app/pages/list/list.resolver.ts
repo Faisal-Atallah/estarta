@@ -20,8 +20,9 @@ export class ListResolver implements Resolve<any> {
   /**
    * Resolver
    *
-   * @param route
-   * @param state
+   * @param {ActivatedRouteSnapshot}route
+   * @param {RouterStateSnapshot}state
+   * @returns {Observable<List[]> | any}
    */
   resolve(
     route: ActivatedRouteSnapshot,

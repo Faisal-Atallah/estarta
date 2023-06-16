@@ -51,6 +51,8 @@ export class ListComponent implements OnInit, OnDestroy {
   /**
    * Get List
    * @returns {void}
+   * @private
+   * @returns {void}
    */
   private _getList(): void {
     this._listService.list$
@@ -68,8 +70,10 @@ export class ListComponent implements OnInit, OnDestroy {
   /**
    * The API Return checked as string so i converted here to boolean
    * @param list
+   * @private
+   * @returns {void}
    */
-  private _convertStringToBoolean(list: any) {
+  private _convertStringToBoolean(list: any): void {
     for (let item in list?.data) {
       list.data[item].checked = /^true$/i.test(list.data[item].checked);
       this.list?.push(list.data[item]);

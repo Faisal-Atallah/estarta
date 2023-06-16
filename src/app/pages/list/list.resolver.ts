@@ -14,6 +14,7 @@ import { List } from './list.types';
 export class ListResolver implements Resolve<any> {
   /**
    * Constructor
+   * @param {ListService}_listService
    */
   constructor(private _listService: ListService) {}
 

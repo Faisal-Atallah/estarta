@@ -10,13 +10,16 @@ import { List } from './list.types';
 export class ListService {
   private _list: BehaviorSubject<List[] | any> = new BehaviorSubject(null);
 
+
   /**
    * Constructor
+   * @param {HttpClient}_httpClient
    */
   constructor(private _httpClient: HttpClient) {}
 
   /**
    * Getter for list
+   * @returns {Observable<List[]>}
    */
   get list$(): Observable<List[]> {
     return this._list.asObservable();

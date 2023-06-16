@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from './layout';
 import { HttpClientModule } from '@angular/common/http';
-import { StringToBooleanPipe } from './shared/pipes/string-to-boolean.pipe';
 
 @NgModule({
   declarations: [AppComponent],

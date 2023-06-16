@@ -5,5 +5,5 @@ export interface List {
 export interface ListItem {
   id: string;
   name: string;
-  checked: boolean;
+  checked: string;
 }

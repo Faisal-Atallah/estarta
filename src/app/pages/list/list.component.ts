@@ -9,7 +9,7 @@ import {
 import { Subject, takeUntil } from 'rxjs';
 import { trackByFn, unsubscribe } from 'src/app/core/utils';
 import { ListService } from './list.service';
-import { ListItem } from './list.types';
+import { List, ListItem } from './list.types';
 
 @Component({
   selector: 'app-list',
@@ -55,7 +55,7 @@ export class ListComponent implements OnInit, OnDestroy {
   private _getList(): void {
     this._listService.list$
       .pipe(takeUntil(this._unsubscribeAll))
-      .subscribe((list: any) => {
+      .subscribe((list: List[]) => {
         this._convertStringToBoolean(list);
         // Mark for check
         this._changeDetectorRef.markForCheck();
@@ -70,7 +70,7 @@ export class ListComponent implements OnInit, OnDestroy {
    * @param list
    */
   private _convertStringToBoolean(list: any) {
-    for (let item in list.data) {
+    for (let item in list?.data) {
       list.data[item].checked = /^true$/i.test(list.data[item].checked);
       this.list?.push(list.data[item]);
     }
